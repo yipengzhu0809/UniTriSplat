@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UniTriSplat is a unified 3D Gaussian Splatting framework with uniform spherical rasterization for universal cameras.">
+  <meta property="og:title" content="UniTriSplat | ECCV 2026">
+  <meta property="og:description" content="Uniform spherical rasterization for perspective, fisheye, and omnidirectional cameras.">
+  <meta property="og:image" content="assets/Pipeline.png">
+  <meta property="og:type" content="website">
+  <title>UniTriSplat | ECCV 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top">UniTriSplat</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="paper-title">
+      <div class="container hero-inner">
+        <p class="venue">ECCV 2026</p>
+        <h1 id="paper-title">UniTriSplat</h1>
+        <p class="subtitle">A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras</p>
+
+        <p class="authors">
+          <a href="https://scholar.google.com/citations?user=pb3sxigAAAAJ&amp;hl=zh-CN">Yipeng Zhu</a>
+          <span>·</span>
+          <a href="https://huajianup.github.io/">Huajian Huang<sup>†</sup></a>
+          <span>·</span>
+          <a href="https://seng.hkust.edu.hk/about/people/faculty/tristan-camille-braud">Tristan Braud</a>
+          <span>·</span>
+          <a href="https://saikit.org/index.html">Sai-Kit Yeung</a>
+        </p>
+        <p class="affiliations">The Hong Kong University of Science and Technology &nbsp;·&nbsp; Beijing Institute of Technology</p>
+        <p class="corresponding"><sup>†</sup> Corresponding author</p>
+
+        <div class="actions" aria-label="Paper resources">
+          <span class="button button-disabled" aria-disabled="true">Paper · Coming soon</span>
+          <span class="button button-disabled" aria-disabled="true">arXiv · Coming soon</span>
+          <a class="button button-primary" href="https://github.com/yipengzhu0809/UniTriSplat">Code</a>
+          <span class="button button-disabled" aria-disabled="true">HSSIM · Coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview-band" id="overview">
+      <div class="container">
+        <figure class="feature-figure">
+          <button class="zoom-trigger" type="button" data-full="assets/Pipeline.png" aria-label="Open the UniTriSplat pipeline figure">
+            <img src="assets/Pipeline.png" alt="Overview of the UniTriSplat pipeline" width="1486" height="1057" fetchpriority="high">
+          </button>
+          <figcaption><strong>UniTriSplat overview.</strong> Heterogeneous camera inputs are mapped to an adaptive HEALPix domain, rasterized in spherical radian space, and optimized with HEALPix-aware supervision.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section video-section" aria-labelledby="video-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Video</p>
+          <h2 id="video-title">Method and results in five minutes</h2>
+        </div>
+        <video class="paper-video" controls preload="metadata" poster="assets/camera-models.png">
+          <source src="assets/unitrisplat-supp.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <section class="section abstract-section" aria-labelledby="abstract-title">
+      <div class="narrow-container">
+        <div class="section-heading">
+          <p class="section-kicker">Paper</p>
+          <h2 id="abstract-title">Abstract</h2>
+        </div>
+        <p class="abstract-text">Existing 3D Gaussian Splatting (3DGS) frameworks rely on camera-specific rasterization, suffering from inconsistent solid-angle sampling and degraded performance across heterogeneous camera models, including perspective, fisheye, and omnidirectional cameras. UniTriSplat reformulates Gaussian splatting on the unit sphere through HEALPix discretization. Its equal-area spherical grid is aligned with the angular resolution of input images, while forward rendering and gradient propagation are derived directly in the spherical radian domain. This produces uniform optimization behavior from narrow-FoV images to full 360-degree panoramas. A HEALPix-aware SSIM loss further respects spherical neighborhood structure. Across diverse camera models, UniTriSplat improves cross-camera generalization while preserving geometric fidelity and rendering quality.</p>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Method</p>
+          <h2 id="method-title">One spherical rasterizer, universal camera models</h2>
+          <p>UniTriSplat decouples the Gaussian representation from camera-specific image planes by rasterizing directly onto an area-uniform HEALPix sphere.</p>
+        </div>
+
+        <div class="figure-stack">
+          <figure class="feature-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/rasterization.png" aria-label="Open the HEALPix rasterization figure">
+              <img src="assets/rasterization.png" alt="HEALPix tessellation and uniform rasterization" loading="lazy">
+            </button>
+            <figcaption><strong>Uniform spherical representation.</strong> HEALPix replaces latitude-dependent equirectangular pixel areas with equal-area sampling and hierarchical indexing.</figcaption>
+          </figure>
+
+          <figure class="feature-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/camera-models.png" aria-label="Open the universal camera models figure">
+              <img src="assets/camera-models.png" alt="Perspective, fisheye, and omnidirectional renderings from UniTriSplat" loading="lazy">
+            </button>
+            <figcaption><strong>Universal cameras.</strong> The same Gaussian scene supports perspective, fisheye, and omnidirectional synthesis across arbitrary fields of view.</figcaption>
+          </figure>
+
+          <figure class="feature-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/healpix-ssim.png" aria-label="Open the HEALPix SSIM figure">
+              <img src="assets/healpix-ssim.png" alt="HEALPix-aware SSIM kernels and similarity maps" loading="lazy">
+            </button>
+            <figcaption><strong>HEALPix-aware SSIM.</strong> Zone-specific kernels, spherical convolution, and singularity-aware boundary handling preserve neighborhood structure on the sphere.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Experiments</p>
+          <h2 id="results-title">Reconstruction and cross-camera rendering</h2>
+          <p>UniTriSplat preserves fine structures across the viewing sphere and maintains consistent scene geometry when switching camera models.</p>
+        </div>
+
+        <div class="results-grid">
+          <figure class="result-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/reconstruction-results.png" aria-label="Open reconstruction comparisons">
+              <img src="assets/reconstruction-results.png" alt="Qualitative reconstruction comparisons" loading="lazy">
+            </button>
+            <figcaption>Omnidirectional reconstruction quality.</figcaption>
+          </figure>
+
+          <figure class="result-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/cross-camera-results.png" aria-label="Open cross-camera comparisons">
+              <img src="assets/cross-camera-results.png" alt="Cross-camera rendering comparisons" loading="lazy">
+            </button>
+            <figcaption>Cross-camera rendering across perspective and fisheye views.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="feature-figure ablation-figure">
+          <button class="zoom-trigger" type="button" data-full="assets/ablation.png" aria-label="Open the ablation study figure">
+            <img src="assets/ablation.png" alt="Tile query and optimization ablation results" loading="lazy">
+          </button>
+          <figcaption><strong>Ablation study.</strong> Tile-query resolution, HSSIM, and density control determine the quality-efficiency trade-off.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="narrow-container">
+        <div class="section-heading">
+          <p class="section-kicker">Reference</p>
+          <h2 id="citation-title">Citation</h2>
+          <p>This provisional BibTeX entry will be updated when the proceedings record is available.</p>
+        </div>
+        <div class="code-shell">
+          <button class="copy-button" type="button" data-copy-target="bibtex">Copy BibTeX</button>
+          <pre id="bibtex"><code>@inproceedings{zhu2026unitrisplat,
+  title     = {UniTriSplat: A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras},
+  author    = {Zhu, Yipeng and Huang, Huajian and Braud, Tristan and Yeung, Sai-Kit},
+  booktitle = {European Conference on Computer Vision},
+  year      = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>UniTriSplat · ECCV 2026</p>
+      <p>Built for the research community.</p>
+    </div>
+  </footer>
+
+  <dialog class="image-dialog" aria-label="Expanded research figure">
+    <button class="dialog-close" type="button" aria-label="Close expanded figure" title="Close">×</button>
+    <img src="" alt="Expanded research figure">
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
