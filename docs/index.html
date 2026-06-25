@@ -25,13 +25,13 @@
           <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">More Work</button>
           <div class="nav-dropdown-menu" aria-label="More related work from our lab">
             <p>More related work from our lab</p>
-            <a target="_blank" rel="noopener noreferrer" href="https://liquorleaf.github.io/research/OmniGS/">OmniGS: Fast Radiance Field Reconstruction using Omnidirectional Gaussian Splatting</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.chenyingshu.com/sc-omnigs/">SC-OmniGS: Self-Calibrating Omnidirectional Gaussian Splatting</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Roam/">360Roam: Real-Time Indoor Roaming Using Geometry-Aware 360° Radiance Fields</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Loc/">360Loc: A Dataset and Benchmark for Omnidirectional Visual Localization with Cross-device Queries</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360VO/">360VO: Visual Odometry Using A Single 360 Camera</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://chris1004336379.github.io/360DVO-homepage/">360DVO: Deep Visual Odometry for Monocular 360-Degree Camera</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://360vots.hkustvgd.com/">360VOTS: Visual Object Tracking and Segmentation in Omnidirectional Videos</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://liquorleaf.github.io/research/OmniGS/"><strong>OmniGS</strong><span>Fast Radiance Field Reconstruction using Omnidirectional Gaussian Splatting</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.chenyingshu.com/sc-omnigs/"><strong>SC-OmniGS</strong><span>Self-Calibrating Omnidirectional Gaussian Splatting</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Roam/"><strong>360Roam</strong><span>Real-Time Indoor Roaming Using Geometry-Aware 360° Radiance Fields</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Loc/"><strong>360Loc</strong><span>A Dataset and Benchmark for Omnidirectional Visual Localization with Cross-device Queries</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360VO/"><strong>360VO</strong><span>Visual Odometry Using A Single 360 Camera</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://chris1004336379.github.io/360DVO-homepage/"><strong>360DVO</strong><span>Deep Visual Odometry for Monocular 360-Degree Camera</span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://360vots.hkustvgd.com/"><strong>360VOTS</strong><span>Visual Object Tracking and Segmentation in Omnidirectional Videos</span></a>
           </div>
         </div>
       </div>
@@ -47,8 +47,8 @@
 
       <div class="container hero-inner">
         <p class="venue">ECCV 2026</p>
-        <h1 id="paper-title">UniTriSplat</h1>
-        <p class="subtitle">A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras</p>
+        <h1 id="paper-title"><span class="title-uni">Uni<span class="uni-cube" aria-hidden="true">3</span></span>TriSplat</h1>
+        <p class="subtitle">A <span class="uni-word"><span class="uni-prefix">Uni</span>fied</span> 3D Gaussian Splatting Framework with <span class="uni-word"><span class="uni-prefix">Uni</span>form</span> Spherical Rasterization for <span class="uni-word"><span class="uni-prefix">Uni</span>versal</span> Cameras</p>
 
         <p class="authors">
           <a href="https://scholar.google.com/citations?user=pb3sxigAAAAJ&amp;hl=zh-CN">Yipeng Zhu</a>
@@ -76,7 +76,6 @@
       <div class="container">
         <div class="section-heading">
           <h2 id="overview-title">Overview</h2>
-          <p>UniTriSplat is a unified 3D Gaussian Splatting framework for universal cameras that performs equal-area spherical rasterization on HEALPix.</p>
         </div>
 
         <div class="overview-layout">
@@ -85,17 +84,13 @@
             <p class="abstract-text">Existing 3D Gaussian Splatting (3DGS) frameworks rely on camera-specific rasterization, suffering from inconsistent solid-angle sampling and degraded performance across heterogeneous camera models, including perspective, fisheye, and omnidirectional cameras. UniTriSplat is a unified 3DGS framework for universal cameras that reformulates Gaussian splatting on the unit sphere via HEALPix discretization. Leveraging the equal-area property of HEALPix, it constructs a spherical sampling grid aligned with the angular resolution of input images and derives forward rendering and gradient propagation directly in the spherical radian domain. This enables uniform optimization behavior from narrow-FoV images to full 360-degree panoramas. A HEALPix-aware SSIM loss further respects spherical neighborhood structure. Extensive experiments across diverse camera models demonstrate improved cross-camera generalization while preserving geometric fidelity and rendering quality.</p>
           </div>
 
-          <figure class="feature-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/Pipeline.png" aria-label="Open the UniTriSplat pipeline figure">
-              <img src="assets/Pipeline.png" alt="Overview of the UniTriSplat pipeline" width="1486" height="1057" fetchpriority="high">
-            </button>
-            <figcaption><strong>UniTriSplat pipeline.</strong> Heterogeneous camera inputs are mapped to an adaptive HEALPix domain, rasterized in spherical radian space, and optimized with HEALPix-aware supervision.</figcaption>
+          <figure class="feature-figure video-figure">
+            <figcaption><strong>Demo video.</strong> The same spherical rasterizer supports perspective, fisheye, and omnidirectional rendering.</figcaption>
+            <video class="paper-video" controls preload="metadata" poster="assets/unitrisplat-supp-poster.jpg">
+              <source src="assets/unitrisplat-supp.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
           </figure>
-
-          <video class="paper-video" controls preload="metadata" poster="assets/camera-models.png">
-            <source src="assets/unitrisplat-supp.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
         </div>
       </div>
     </section>
@@ -104,30 +99,41 @@
       <div class="container">
         <div class="section-heading">
           <h2 id="method-title">Method</h2>
-          <p>UniTriSplat decouples Gaussian rasterization from camera-specific image planes by rendering on an equal-area HEALPix sphere, then synthesizing perspective, fisheye, and omnidirectional images through camera-to-sphere mappings and valid FoV masks.</p>
         </div>
 
         <div class="figure-stack">
           <figure class="feature-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/rasterization.png" aria-label="Open the HEALPix rasterization figure">
-              <img src="assets/rasterization.png" alt="HEALPix tessellation and spherical Gaussian rasterization" loading="lazy">
+            <figcaption><strong>Pipeline.</strong> Heterogeneous inputs are mapped to HEALPix, rasterized in spherical radian space, and supervised consistently.</figcaption>
+            <button class="zoom-trigger" type="button" data-full="assets/Pipeline.png" aria-label="Open the UniTriSplat pipeline figure">
+              <img src="assets/Pipeline.png" alt="Overview of the UniTriSplat pipeline" width="1486" height="1057" loading="lazy">
             </button>
-            <figcaption><strong>HEALPix rasterization.</strong> Equal-area spherical pixels provide uniform solid-angle sampling, radial-depth compositing, and efficient tile queries through HEALPix indexing.</figcaption>
           </figure>
 
-          <figure class="feature-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/camera-models.png" aria-label="Open rendering results across camera models and FoVs">
-              <img src="assets/camera-models.png" alt="Perspective, fisheye, and omnidirectional rendering from the same HEALPix representation" loading="lazy">
-            </button>
-            <figcaption><strong>Arbitrary FoV support.</strong> The same spherical rasterizer synthesizes perspective, fisheye, and omnidirectional images by changing only the image-to-sphere mapping and visible FoV region.</figcaption>
-          </figure>
+          <details class="method-details">
+            <summary>More Method Details</summary>
+            <div class="method-detail-stack">
+              <figure class="feature-figure">
+                <figcaption><strong>Rasterization.</strong> Equal-area HEALPix pixels stabilize spherical sampling, depth compositing, and tile queries.</figcaption>
+                <button class="zoom-trigger" type="button" data-full="assets/rasterization.png" aria-label="Open the HEALPix rasterization figure">
+                  <img src="assets/rasterization.png" alt="HEALPix tessellation and spherical Gaussian rasterization" loading="lazy">
+                </button>
+              </figure>
 
-          <figure class="feature-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/healpix-ssim.png" aria-label="Open the HEALPix SSIM figure">
-              <img src="assets/healpix-ssim.png" alt="HEALPix-aware SSIM kernels and similarity maps" loading="lazy">
-            </button>
-            <figcaption><strong>HEALPix-aware SSIM.</strong> Zone-specific kernels, spherical convolution, and singularity-aware boundary handling make structural supervision consistent on the HEALPix topology.</figcaption>
-          </figure>
+              <figure class="feature-figure">
+                <figcaption><strong>FoV support.</strong> Only the image-to-sphere map and visible FoV region change across camera models.</figcaption>
+                <button class="zoom-trigger" type="button" data-full="assets/camera-models.png" aria-label="Open rendering results across camera models and FoVs">
+                  <img src="assets/camera-models.png" alt="Perspective, fisheye, and omnidirectional rendering from the same HEALPix representation" loading="lazy">
+                </button>
+              </figure>
+
+              <figure class="feature-figure">
+                <figcaption><strong>H-SSIM.</strong> Zone-aware kernels and boundary handling keep structural supervision consistent on HEALPix.</figcaption>
+                <button class="zoom-trigger" type="button" data-full="assets/healpix-ssim.png" aria-label="Open the HEALPix SSIM figure">
+                  <img src="assets/healpix-ssim.png" alt="HEALPix-aware SSIM kernels and similarity maps" loading="lazy">
+                </button>
+              </figure>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -136,7 +142,6 @@
       <div class="container">
         <div class="section-heading">
           <h2 id="results-title">Results</h2>
-          <p>We evaluate UniTriSplat on perspective, fisheye, and omnidirectional benchmarks, and further test whether learned Gaussians remain consistent when rendered through different camera models and FoVs.</p>
         </div>
 
         <section class="multifov-comparison" aria-labelledby="multifov-title">
@@ -159,20 +164,106 @@
           </div>
         </section>
 
-        <div class="results-grid results-grid-spaced">
-          <figure class="result-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/cross-camera-results.png" aria-label="Open cross-camera validation comparisons">
-              <img src="assets/cross-camera-results.png" alt="Cross-camera validation across perspective and fisheye renderings" loading="lazy">
-            </button>
-            <figcaption><strong>Cross-camera validation.</strong> Gaussian scenes trained from omnidirectional inputs are rendered into perspective and fisheye views to assess cross-projection consistency.</figcaption>
-          </figure>
+        <section class="cross-camera-comparison" aria-labelledby="cross-camera-title">
+          <div class="comparison-heading">
+            <h3 id="cross-camera-title">Cross-camera Validation</h3>
+            <p>Omnidirectional models are re-rendered through fisheye and perspective rasterizers to compare cross-projection consistency across camera models.</p>
+          </div>
 
-          <figure class="result-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/ablation.png" aria-label="Open tile query and optimization ablation results">
-              <img src="assets/ablation.png" alt="Tile query and optimization ablation results" loading="lazy">
-            </button>
-            <figcaption><strong>Ablation study.</strong> RING sequential scan, HEALPix-aware SSIM, and radian-space density control define the main quality-efficiency trade-offs.</figcaption>
-          </figure>
+          <div class="cross-camera-viewer" data-cross-camera-viewer>
+            <div class="cross-scene-tabs" data-cross-scene-tabs aria-label="Select cross-camera validation scene"></div>
+
+            <div class="comparison-meta">
+              <div>
+                <p class="comparison-type" data-cross-dataset>Ricoh360</p>
+                <h4 data-cross-scene-name>Pillar</h4>
+              </div>
+              <p data-cross-scene-note>Reconstruction quality of each method on the omnidirectional scene</p>
+            </div>
+
+            <div class="cross-model-scenes" data-cross-model-scenes></div>
+
+            <div class="cross-render-panel">
+              <div class="cross-render-tabs" data-cross-render-tabs aria-label="Select target camera model"></div>
+              <div class="cross-render-layout" data-cross-render-layout></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="results-grid results-grid-spaced">
+          <details class="result-details">
+            <summary>Additional Results</summary>
+            <div class="result-detail-stack">
+              <details class="result-subdetails">
+                <summary>Ablation Study</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>Ablation study.</strong> RING scan, H-SSIM, and radian-space density control trade off quality and efficiency.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/ablation.png" aria-label="Open tile query and optimization ablation results">
+                    <img src="assets/ablation.png" alt="Tile query and optimization ablation results" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+
+              <details class="result-subdetails">
+                <summary>Cross-Resolution Evaluation</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>Cross-resolution evaluation.</strong> Additional 360Roam comparisons at multiple input resolutions.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-cross-resolution.png" aria-label="Open supplementary cross-resolution comparison">
+                    <img src="assets/supp-cross-resolution.png" alt="Cross-resolution qualitative comparison on 360Roam" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+
+              <details class="result-subdetails">
+                <summary>FIORD Fisheye Inputs</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>FIORD fisheye inputs.</strong> Comparisons against OP43DGS, Fisheye-GS, and 3DGUT.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-fiord.png" aria-label="Open supplementary FIORD fisheye comparison">
+                    <img src="assets/supp-fiord.png" alt="Qualitative fisheye comparison on FIORD" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+
+              <details class="result-subdetails">
+                <summary>ScanNet++ Fisheye Inputs</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>ScanNet++ fisheye inputs.</strong> Additional indoor fisheye reconstruction comparisons.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-scannetpp.png" aria-label="Open supplementary ScanNet++ fisheye comparison">
+                    <img src="assets/supp-scannetpp.png" alt="Qualitative fisheye comparison on ScanNet++" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+
+              <details class="result-subdetails">
+                <summary>Mip-NeRF 360 Perspective Inputs</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>Mip-NeRF 360 perspective inputs.</strong> Additional perspective reconstruction comparisons.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-mipnerf360.png" aria-label="Open supplementary Mip-NeRF 360 perspective comparison">
+                    <img src="assets/supp-mipnerf360.png" alt="Qualitative perspective comparison on Mip-NeRF 360" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+              <details class="result-subdetails">
+                <summary>Vanilla 3DGS Scene: Render to Fisheye</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>Vanilla 3DGS Scene: Render to fisheye.</strong> Fisheye rendering of perspective-trained vanilla 3DGS scenes.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-vanilla-fisheye.png" aria-label="Open supplementary fisheye rendering of vanilla 3DGS models">
+                    <img src="assets/supp-vanilla-fisheye.png" alt="Fisheye rendering of vanilla 3DGS models" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+
+              <details class="result-subdetails">
+                <summary>Vanilla 3DGS Scene: Render to Omnidirectional</summary>
+                <figure class="result-figure">
+                  <figcaption><strong>Vanilla 3DGS Scene: Render to omnidirectional.</strong> Omnidirectional rendering of perspective-trained vanilla 3DGS scenes.</figcaption>
+                  <button class="zoom-trigger" type="button" data-full="assets/supp-vanilla-omni.png" aria-label="Open supplementary omnidirectional rendering of vanilla 3DGS models">
+                    <img src="assets/supp-vanilla-omni.png" alt="Omnidirectional rendering of vanilla 3DGS models" loading="lazy">
+                  </button>
+                </figure>
+              </details>
+            </div>
+          </details>
         </div>
       </div>
     </section>
