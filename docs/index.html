@@ -9,6 +9,7 @@
   <meta property="og:image" content="assets/Pipeline.png">
   <meta property="og:type" content="website">
   <title>UniTriSplat | ECCV 2026</title>
+  <link rel="stylesheet" href="dics.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,12 +21,30 @@
         <a href="#method">Method</a>
         <a href="#results">Results</a>
         <a href="#citation">Citation</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">More Work</button>
+          <div class="nav-dropdown-menu" aria-label="More related work from our lab">
+            <p>More related work from our lab</p>
+            <a target="_blank" rel="noopener noreferrer" href="https://liquorleaf.github.io/research/OmniGS/">OmniGS: Fast Radiance Field Reconstruction using Omnidirectional Gaussian Splatting</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.chenyingshu.com/sc-omnigs/">SC-OmniGS: Self-Calibrating Omnidirectional Gaussian Splatting</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Roam/">360Roam: Real-Time Indoor Roaming Using Geometry-Aware 360° Radiance Fields</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360Loc/">360Loc: A Dataset and Benchmark for Omnidirectional Visual Localization with Cross-device Queries</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://huajianup.github.io/research/360VO/">360VO: Visual Odometry Using A Single 360 Camera</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://chris1004336379.github.io/360DVO-homepage/">360DVO: Deep Visual Odometry for Monocular 360-Degree Camera</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://360vots.hkustvgd.com/">360VOTS: Visual Object Tracking and Segmentation in Omnidirectional Videos</a>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="paper-title">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/hero-opening.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade" aria-hidden="true"></div>
+
       <div class="container hero-inner">
         <p class="venue">ECCV 2026</p>
         <h1 id="paper-title">UniTriSplat</h1>
@@ -45,6 +64,7 @@
 
         <div class="actions" aria-label="Paper resources">
           <span class="button button-disabled" aria-disabled="true">Paper · Coming soon</span>
+          <span class="button button-disabled" aria-disabled="true">Supplementary · Coming soon</span>
           <span class="button button-disabled" aria-disabled="true">arXiv · Coming soon</span>
           <a class="button button-primary" href="https://github.com/yipengzhu0809/UniTriSplat">Code</a>
           <span class="button button-disabled" aria-disabled="true">HSSIM · Coming soon</span>
@@ -52,68 +72,61 @@
       </div>
     </section>
 
-    <section class="overview-band" id="overview">
-      <div class="container">
-        <figure class="feature-figure">
-          <button class="zoom-trigger" type="button" data-full="assets/Pipeline.png" aria-label="Open the UniTriSplat pipeline figure">
-            <img src="assets/Pipeline.png" alt="Overview of the UniTriSplat pipeline" width="1486" height="1057" fetchpriority="high">
-          </button>
-          <figcaption><strong>UniTriSplat overview.</strong> Heterogeneous camera inputs are mapped to an adaptive HEALPix domain, rasterized in spherical radian space, and optimized with HEALPix-aware supervision.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section video-section" aria-labelledby="video-title">
+    <section class="section overview-section" id="overview" aria-labelledby="overview-title">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Video</p>
-          <h2 id="video-title">Method and results in five minutes</h2>
+          <h2 id="overview-title">Overview</h2>
+          <p>UniTriSplat is a unified 3D Gaussian Splatting framework for universal cameras that performs equal-area spherical rasterization on HEALPix.</p>
         </div>
-        <video class="paper-video" controls preload="metadata" poster="assets/camera-models.png">
-          <source src="assets/unitrisplat-supp.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </section>
 
-    <section class="section abstract-section" aria-labelledby="abstract-title">
-      <div class="narrow-container">
-        <div class="section-heading">
-          <p class="section-kicker">Paper</p>
-          <h2 id="abstract-title">Abstract</h2>
+        <div class="overview-layout">
+          <div class="abstract-panel">
+            <h3>Abstract</h3>
+            <p class="abstract-text">Existing 3D Gaussian Splatting (3DGS) frameworks rely on camera-specific rasterization, suffering from inconsistent solid-angle sampling and degraded performance across heterogeneous camera models, including perspective, fisheye, and omnidirectional cameras. UniTriSplat is a unified 3DGS framework for universal cameras that reformulates Gaussian splatting on the unit sphere via HEALPix discretization. Leveraging the equal-area property of HEALPix, it constructs a spherical sampling grid aligned with the angular resolution of input images and derives forward rendering and gradient propagation directly in the spherical radian domain. This enables uniform optimization behavior from narrow-FoV images to full 360-degree panoramas. A HEALPix-aware SSIM loss further respects spherical neighborhood structure. Extensive experiments across diverse camera models demonstrate improved cross-camera generalization while preserving geometric fidelity and rendering quality.</p>
+          </div>
+
+          <figure class="feature-figure">
+            <button class="zoom-trigger" type="button" data-full="assets/Pipeline.png" aria-label="Open the UniTriSplat pipeline figure">
+              <img src="assets/Pipeline.png" alt="Overview of the UniTriSplat pipeline" width="1486" height="1057" fetchpriority="high">
+            </button>
+            <figcaption><strong>UniTriSplat pipeline.</strong> Heterogeneous camera inputs are mapped to an adaptive HEALPix domain, rasterized in spherical radian space, and optimized with HEALPix-aware supervision.</figcaption>
+          </figure>
+
+          <video class="paper-video" controls preload="metadata" poster="assets/camera-models.png">
+            <source src="assets/unitrisplat-supp.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
         </div>
-        <p class="abstract-text">Existing 3D Gaussian Splatting (3DGS) frameworks rely on camera-specific rasterization, suffering from inconsistent solid-angle sampling and degraded performance across heterogeneous camera models, including perspective, fisheye, and omnidirectional cameras. UniTriSplat reformulates Gaussian splatting on the unit sphere through HEALPix discretization. Its equal-area spherical grid is aligned with the angular resolution of input images, while forward rendering and gradient propagation are derived directly in the spherical radian domain. This produces uniform optimization behavior from narrow-FoV images to full 360-degree panoramas. A HEALPix-aware SSIM loss further respects spherical neighborhood structure. Across diverse camera models, UniTriSplat improves cross-camera generalization while preserving geometric fidelity and rendering quality.</p>
       </div>
     </section>
 
     <section class="section method-section" id="method" aria-labelledby="method-title">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Method</p>
-          <h2 id="method-title">One spherical rasterizer, universal camera models</h2>
-          <p>UniTriSplat decouples the Gaussian representation from camera-specific image planes by rasterizing directly onto an area-uniform HEALPix sphere.</p>
+          <h2 id="method-title">Method</h2>
+          <p>UniTriSplat decouples Gaussian rasterization from camera-specific image planes by rendering on an equal-area HEALPix sphere, then synthesizing perspective, fisheye, and omnidirectional images through camera-to-sphere mappings and valid FoV masks.</p>
         </div>
 
         <div class="figure-stack">
           <figure class="feature-figure">
             <button class="zoom-trigger" type="button" data-full="assets/rasterization.png" aria-label="Open the HEALPix rasterization figure">
-              <img src="assets/rasterization.png" alt="HEALPix tessellation and uniform rasterization" loading="lazy">
+              <img src="assets/rasterization.png" alt="HEALPix tessellation and spherical Gaussian rasterization" loading="lazy">
             </button>
-            <figcaption><strong>Uniform spherical representation.</strong> HEALPix replaces latitude-dependent equirectangular pixel areas with equal-area sampling and hierarchical indexing.</figcaption>
+            <figcaption><strong>HEALPix rasterization.</strong> Equal-area spherical pixels provide uniform solid-angle sampling, radial-depth compositing, and efficient tile queries through HEALPix indexing.</figcaption>
           </figure>
 
           <figure class="feature-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/camera-models.png" aria-label="Open the universal camera models figure">
-              <img src="assets/camera-models.png" alt="Perspective, fisheye, and omnidirectional renderings from UniTriSplat" loading="lazy">
+            <button class="zoom-trigger" type="button" data-full="assets/camera-models.png" aria-label="Open rendering results across camera models and FoVs">
+              <img src="assets/camera-models.png" alt="Perspective, fisheye, and omnidirectional rendering from the same HEALPix representation" loading="lazy">
             </button>
-            <figcaption><strong>Universal cameras.</strong> The same Gaussian scene supports perspective, fisheye, and omnidirectional synthesis across arbitrary fields of view.</figcaption>
+            <figcaption><strong>Arbitrary FoV support.</strong> The same spherical rasterizer synthesizes perspective, fisheye, and omnidirectional images by changing only the image-to-sphere mapping and visible FoV region.</figcaption>
           </figure>
 
           <figure class="feature-figure">
             <button class="zoom-trigger" type="button" data-full="assets/healpix-ssim.png" aria-label="Open the HEALPix SSIM figure">
               <img src="assets/healpix-ssim.png" alt="HEALPix-aware SSIM kernels and similarity maps" loading="lazy">
             </button>
-            <figcaption><strong>HEALPix-aware SSIM.</strong> Zone-specific kernels, spherical convolution, and singularity-aware boundary handling preserve neighborhood structure on the sphere.</figcaption>
+            <figcaption><strong>HEALPix-aware SSIM.</strong> Zone-specific kernels, spherical convolution, and singularity-aware boundary handling make structural supervision consistent on the HEALPix topology.</figcaption>
           </figure>
         </div>
       </div>
@@ -122,51 +135,53 @@
     <section class="section results-section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Experiments</p>
-          <h2 id="results-title">Reconstruction and cross-camera rendering</h2>
-          <p>UniTriSplat preserves fine structures across the viewing sphere and maintains consistent scene geometry when switching camera models.</p>
+          <h2 id="results-title">Results</h2>
+          <p>We evaluate UniTriSplat on perspective, fisheye, and omnidirectional benchmarks, and further test whether learned Gaussians remain consistent when rendered through different camera models and FoVs.</p>
         </div>
 
-        <div class="results-grid">
+        <section class="multifov-comparison" aria-labelledby="multifov-title">
+          <div class="comparison-heading">
+            <h3 id="multifov-title">Multi-FoV Evaluation</h3>
+            <p>This evaluation compares UniTriSplat with camera-specific baselines across omnidirectional, fisheye, and perspective scenes with diverse FoVs.</p>
+          </div>
+
+          <div class="sc-dics-comparison" data-multifov-viewer>
+            <div class="comparison-meta">
+              <div>
+                <p class="comparison-type" data-scene-type>Omnidirectional</p>
+                <h4 data-scene-name>Omnidirectional Scene 1</h4>
+              </div>
+              <p data-scene-fov>360Roam · FoV icon pending</p>
+            </div>
+
+            <div class="sc-dics-scenes" data-dics-scenes></div>
+            <div class="fov-scene-tabs carousel-btns" data-scene-tabs aria-label="Select Multi-FoV scene"></div>
+          </div>
+        </section>
+
+        <div class="results-grid results-grid-spaced">
           <figure class="result-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/reconstruction-results.png" aria-label="Open reconstruction comparisons">
-              <img src="assets/reconstruction-results.png" alt="Qualitative reconstruction comparisons" loading="lazy">
+            <button class="zoom-trigger" type="button" data-full="assets/cross-camera-results.png" aria-label="Open cross-camera validation comparisons">
+              <img src="assets/cross-camera-results.png" alt="Cross-camera validation across perspective and fisheye renderings" loading="lazy">
             </button>
-            <figcaption>Omnidirectional reconstruction quality.</figcaption>
+            <figcaption><strong>Cross-camera validation.</strong> Gaussian scenes trained from omnidirectional inputs are rendered into perspective and fisheye views to assess cross-projection consistency.</figcaption>
           </figure>
 
           <figure class="result-figure">
-            <button class="zoom-trigger" type="button" data-full="assets/cross-camera-results.png" aria-label="Open cross-camera comparisons">
-              <img src="assets/cross-camera-results.png" alt="Cross-camera rendering comparisons" loading="lazy">
+            <button class="zoom-trigger" type="button" data-full="assets/ablation.png" aria-label="Open tile query and optimization ablation results">
+              <img src="assets/ablation.png" alt="Tile query and optimization ablation results" loading="lazy">
             </button>
-            <figcaption>Cross-camera rendering across perspective and fisheye views.</figcaption>
+            <figcaption><strong>Ablation study.</strong> RING sequential scan, HEALPix-aware SSIM, and radian-space density control define the main quality-efficiency trade-offs.</figcaption>
           </figure>
         </div>
-
-        <figure class="feature-figure ablation-figure">
-          <button class="zoom-trigger" type="button" data-full="assets/ablation.png" aria-label="Open the ablation study figure">
-            <img src="assets/ablation.png" alt="Tile query and optimization ablation results" loading="lazy">
-          </button>
-          <figcaption><strong>Ablation study.</strong> Tile-query resolution, HSSIM, and density control determine the quality-efficiency trade-off.</figcaption>
-        </figure>
       </div>
     </section>
 
     <section class="section citation-section" id="citation" aria-labelledby="citation-title">
       <div class="narrow-container">
         <div class="section-heading">
-          <p class="section-kicker">Reference</p>
           <h2 id="citation-title">Citation</h2>
-          <p>This provisional BibTeX entry will be updated when the proceedings record is available.</p>
-        </div>
-        <div class="code-shell">
-          <button class="copy-button" type="button" data-copy-target="bibtex">Copy BibTeX</button>
-          <pre id="bibtex"><code>@inproceedings{zhu2026unitrisplat,
-  title     = {UniTriSplat: A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras},
-  author    = {Zhu, Yipeng and Huang, Huajian and Braud, Tristan and Yeung, Sai-Kit},
-  booktitle = {European Conference on Computer Vision},
-  year      = {2026}
-}</code></pre>
+          <p>The official proceedings citation and BibTeX entry will be added when available.</p>
         </div>
       </div>
     </section>
@@ -175,7 +190,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>UniTriSplat · ECCV 2026</p>
-      <p>Built for the research community.</p>
+      <p>Vision, Graphics and Computational Design (VGD) Group, HKUST</p>
     </div>
   </footer>
 
@@ -184,6 +199,7 @@
     <img src="" alt="Expanded research figure">
   </dialog>
 
+  <script src="dics.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
