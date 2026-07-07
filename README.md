@@ -3,8 +3,8 @@
 <h1 style="margin: 0;">UniTriSplat: A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras</h1>
 
 <p style="margin: 8px 0 2px 0;">
-  <a href="#paper"><img alt="Paper" src="https://img.shields.io/badge/Paper-Coming%20soon-blue?style=flat" /></a>
-  <a href="#arxiv"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-Coming%20soon-green?style=flat" /></a>
+  <a href="docs/assets/unitrisplat-paper.pdf"><img alt="Paper" src="https://img.shields.io/badge/Paper-PDF-blue?style=flat" /></a>
+  <a href="https://arxiv.org/abs/2606.29794"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.29794-green?style=flat" /></a>
   <a href="https://yipengzhu0809.github.io/UniTriSplat/"><img alt="Project Page" src="https://img.shields.io/badge/Project%20Page-Website-orange?style=flat" /></a>
   <a href="#sub-hssim"><img alt="HSSIM" src="https://img.shields.io/badge/HSSIM-Coming%20soon-red?style=flat" /></a>
 </p>
