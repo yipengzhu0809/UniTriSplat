@@ -535,6 +535,19 @@ h1 {
   background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
 }
 
+.bibtex-block {
+  margin: 0;
+  border: 1px solid #c8d4d9;
+  border-radius: 6px;
+  background: #f3f7f8;
+  color: #111b20;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.bibtex-block code {
+  color: #111b20;
+}
+
 .method-section {
   background: var(--soft-strong);
 }
