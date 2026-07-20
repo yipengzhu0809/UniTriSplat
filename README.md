@@ -47,6 +47,6 @@ Extensive experiments across diverse camera models demonstrate that UniTriSplat 
 
 ## Updates:
 - 🚧 **Coming soon:** Full source code release.
-- 🚧 **Coming soon:** HSSIM submodule source code release.
-- 🚧 **Coming soon:** Project page.
+- ✅ **2026-07-20:** [HSSIM submodule source code](https://github.com/yipengzhu0809/healpix-ssim) was released.
+- ✅ **2026-07-07:** The [project page](https://yipengzhu0809.github.io/UniTriSplat/) was released.
 - ✅ **2026-06-17:** UniTriSplat was accepted to ECCV 2026! 🎉
