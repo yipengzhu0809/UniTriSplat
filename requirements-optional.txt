@@ -1,0 +1,4 @@
+# Optional evaluation and visualization utilities.
+matplotlib
+scikit-image
+scipy

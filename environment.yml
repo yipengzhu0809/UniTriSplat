@@ -1,0 +1,16 @@
+name: unitrisplat
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - cmake
+  - ninja
+  - numpy
+  - pillow
+  - plyfile
+  - tqdm
+  - joblib
+  - pip:
+      - opencv-python
+      - healpy

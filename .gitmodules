@@ -1,0 +1,3 @@
+[submodule "submodules/healpix-ssim"]
+	path = submodules/healpix-ssim
+	url = https://github.com/yipengzhu0809/healpix-ssim.git

@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# UniTriSplat outputs and local experiment artifacts
+output/
+training_logs/
+*.pth
+*.pt
+*.whl
+cfg_args
+point_cloud_stats.json
+gpu_monitor.csv
