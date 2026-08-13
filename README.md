@@ -461,10 +461,12 @@ original material for which the UniTriSplat authors hold the necessary rights.
 ## Citation
 
 ```bibtex
-@article{zhu2026unitrisplat,
+@inproceedings{zhu2026unitrisplat,
   title={UniTriSplat: A Unified 3D Gaussian Splatting Framework with Uniform Spherical Rasterization for Universal Cameras},
   author={Zhu, Yipeng and Huang, Huajian and Braud, Tristan and Yeung, Sai-Kit},
-  journal={arXiv preprint arXiv:2606.29794},
-  year={2026}
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026},
+  note={Accepted. Preprint available at arXiv:2606.29794},
+  url={https://arxiv.org/abs/2606.29794}
 }
 ```
